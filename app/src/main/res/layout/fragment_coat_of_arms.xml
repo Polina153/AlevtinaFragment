@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".CoatOfArmsFragment"
+    >
+
+    <TextView
+        android:id="@+id/coat_of_arms_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/text_size"
+        />
+
+    <Button
+        android:id="@+id/coat_of_arms_button_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_back"
+        android:textSize="@dimen/text_size"
+        />
+
+    <Button
+        android:id="@+id/coat_of_arms_button_remove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        android:textSize="@dimen/text_size"
+        />
+
+    <ImageView
+        android:id="@+id/coat_of_arms_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="coat of arms"
+        tools:src="@drawable/msc"
+        />
+</LinearLayout>
