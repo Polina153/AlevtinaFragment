@@ -34,11 +34,15 @@
         android:textSize="@dimen/text_size"
         />
 
-    <ImageView
-        android:id="@+id/coat_of_arms_image_view"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="coat of arms"
-        tools:src="@drawable/msc"
-        />
+        android:layout_height="wrap_content"
+        >
+
+        <FrameLayout
+            android:id="@+id/coat_of_arms_child_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ScrollView>
 </LinearLayout>

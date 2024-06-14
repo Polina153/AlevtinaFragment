@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.fragment_container, citiesFragment)
                 .commit();*/
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+/*        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .addToBackStack("")
@@ -34,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
                     .beginTransaction()
                     .addToBackStack("")
                     .add(R.id.fragment_container, new CitiesFragment()).commit();
+        }*/
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fragment_container, new CitiesFragment()).commit();
         }
-
     }
 }

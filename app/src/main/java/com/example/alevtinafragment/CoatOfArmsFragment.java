@@ -1,24 +1,27 @@
 package com.example.alevtinafragment;
 
-import android.content.res.TypedArray;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import java.util.List;
 
 public class CoatOfArmsFragment extends Fragment {
     static final String ARG_INDEX = "index";
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,10 +52,10 @@ public class CoatOfArmsFragment extends Fragment {
         // Аргументы могут быть null (как в случае с методом Activity getIntent())
         // поэтому обязательно проверяем на null
         if (arguments != null) {
-            City city = (City) arguments.getParcelable(ARG_INDEX);
+            City city = arguments.getParcelable(ARG_INDEX);
             //int index = arguments.getInt(ARG_INDEX);
             // найдем в root view нужный ImageView
-            ImageView imageCoatOfArms = view.findViewById(R.id.coat_of_arms_image_view);
+           /* ImageView imageCoatOfArms = view.findViewById(R.id.coat_of_arms_image_view);
             // Получим из ресурсов массив указателей на изображения гербов
             // Обратите внимание на тип - TypedArray, и способ получения - obtainTypedArray
             TypedArray images = getResources().obtainTypedArray(R.array.coat_of_arms_imgs);
@@ -64,7 +67,7 @@ public class CoatOfArmsFragment extends Fragment {
                 imageCoatOfArms.setImageResource(images.getResourceId(0, 0));
             }
             // TypedArray рекомендуется закрыть после использования
-            images.recycle();
+            images.recycle();*/
 
             // найдем в root view нужный TextView
             TextView textView = view.findViewById(R.id.coat_of_arms_text_view);
@@ -73,6 +76,12 @@ public class CoatOfArmsFragment extends Fragment {
             } else {
                 textView.setText("Moscow");
             }
+
+            getChildFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack("")
+                    .replace(R.id.coat_of_arms_child_container, ChildCoatOfArmsFragment.newInstance(city))
+                    .commit();
         }
     }
 
