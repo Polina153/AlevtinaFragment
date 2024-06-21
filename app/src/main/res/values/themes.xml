@@ -3,6 +3,13 @@
     <style name="Base.Theme.AlevtinaFragment" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="actionOverflowButtonStyle">@style/actionOverflowButtonStyle</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="actionOverflowButtonStyle" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/white</item>
+
     </style>
 
     <style name="Theme.AlevtinaFragment" parent="Base.Theme.AlevtinaFragment" />

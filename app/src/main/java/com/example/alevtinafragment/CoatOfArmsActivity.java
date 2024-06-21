@@ -30,6 +30,8 @@ public class CoatOfArmsActivity extends AppCompatActivity {
         if (savedInstanceState == null)
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.coat_of_arms_fragment_container, CoatOfArmsFragment.newInstance(city)).commit();
+                    .addToBackStack("")
+                    .replace(R.id.coat_of_arms_fragment_container, CoatOfArmsFragment.newInstance(city))
+                    .commit();
     }
 }
